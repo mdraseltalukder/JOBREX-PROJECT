@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button"
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card"
 import { Briefcase, Building2, Globe2, Users } from 'lucide-react'
 import about from '../assets/about.webp'
@@ -45,7 +45,7 @@ export default function AboutSection() {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
             Connecting Talent with Opportunity
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg dark:text-white text-muted-foreground">
             We're on a mission to make job searching and hiring simpler, more efficient, 
             and more accessible for everyone. Our platform brings together job seekers 
             and employers in a seamless, user-friendly environment.
@@ -56,17 +56,17 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <Card key={index} className="border-none shadow-md">
-              <CardHeader className="space-y-1">
+              <CardHeader className="flex flex-col items-center gap-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
                   <stat.icon className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-3xl font-bold">{stat.value}</CardTitle>
-                <CardDescription className="text-lg font-medium text-gray-900">
+                <CardDescription className="text-lg font-medium text-gray-900 dark:text-white">
                   {stat.label}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground">{stat.description}</p>
+                <p className="text-muted-foreground dark:text-white">{stat.description}</p>
               </CardContent>
             </Card>
           ))}

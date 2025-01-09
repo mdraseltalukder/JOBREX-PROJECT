@@ -7,21 +7,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Book, Search, ShoppingCart } from 'lucide-react'
+import { Search } from 'lucide-react'
 import About from "./About"
 
 export default function Home() {
   return (<>
     <div className="min-h-screen">
-      {/* Navigation Icons */}
-      <div className="fixed right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4">
-        <Button variant="ghost" size="icon" className="rounded-full border border-black">
-          <Book className="h-5 w-5" />
-        </Button>
-        <Button variant="ghost" size="icon" className="rounded-full">
-          <ShoppingCart className="h-5 w-5" />
-        </Button>
-      </div>
+     
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-20">
@@ -34,7 +26,7 @@ export default function Home() {
                 <br />
                 <span className="italic">Freelancers</span> services
               </h1>
-              <p className="text-gray-600 text-lg">
+              <p className="text-gray-600 text-lg dark:text-white">
                 Over 1200+ expect freelancers are waiting for you
               </p>
             </div>
@@ -53,8 +45,8 @@ export default function Home() {
                 <SelectTrigger className="w-[140px] border-black rounded-xl focus:ring-0 border z-10">
                   <SelectValue placeholder="Select city" />
                 </SelectTrigger>
-                <SelectContent className="z-10">
-                  <SelectItem value="all" >All Cities</SelectItem>
+                <SelectContent className="z-10 dark:bg-white dark:text-black ">
+                  <SelectItem value="all"  >All Cities</SelectItem>
                   <SelectItem value="new-york">New York</SelectItem>
                   <SelectItem value="london">London</SelectItem>
                   <SelectItem value="paris">Paris</SelectItem>
