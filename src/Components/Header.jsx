@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { SignedIn, SignedOut, SignIn, SignUp, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, SignIn, UserButton } from '@clerk/clerk-react';
+import { Briefcase, DotIcon } from 'lucide-react';
 import { useState } from 'react';
 import ThemeToggle from './mode-toggle';
 
@@ -16,7 +17,9 @@ const handleOverlayClick=(e)=>{
 
   return (
     <div className="flex justify-between items-center container">
+   <a href="/">
    <h2 className='text-3xl font-thin'>JOBREX JOB</h2>
+   </a>
     
     <div className='flex gap-3 justify-center items-center'>
     <div>
@@ -30,7 +33,21 @@ const handleOverlayClick=(e)=>{
         <Button onClick={() => setShowSignin(true)}>Login</Button>
       </SignedOut>
       <SignedIn>
-        <UserButton/>
+        <UserButton
+          appearance={{
+            elements: {
+              avatarBox:'size-10'
+            }
+          }}
+           >
+           <UserButton.MenuItems>
+          <UserButton.Link
+            label="My Job"
+            labelIcon={<Briefcase size={19} />}
+            href="/myjobs"
+          />
+        </UserButton.MenuItems>
+        </UserButton>
       </SignedIn>
    {
     showSignin && (
@@ -38,7 +55,11 @@ const handleOverlayClick=(e)=>{
       onClick={handleOverlayClick}
       >
 
-     <SignIn/>
+     <SignIn
+     signUpForceRedirectUrl='/onboard'
+      fallbackRedirectUrl='/onboard'
+    
+     />
    </div>
     )
    }

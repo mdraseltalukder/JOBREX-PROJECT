@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/select"
 import { Search } from 'lucide-react'
 import About from "./About"
+import Revews from "@/Components/Revews"
 
 export default function Home() {
   return (<>
@@ -66,7 +67,7 @@ export default function Home() {
         </div>
       </div>
     </div>
-
+<Revews/>
     <About/>
     
     </>
