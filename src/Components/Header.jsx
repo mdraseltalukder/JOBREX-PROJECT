@@ -1,19 +1,36 @@
 import { Button } from '@/components/ui/button';
 import { SignedIn, SignedOut, SignIn, UserButton } from '@clerk/clerk-react';
-import { Briefcase, DotIcon } from 'lucide-react';
-import { useState } from 'react';
+import { Briefcase } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import ThemeToggle from './mode-toggle';
+
 
 
 
 export default function Header() {
   const [showSignin , setShowSignin] = useState(false)
+
+  const [search, setSearch ]= useSearchParams()
+
+
+
 const handleOverlayClick=(e)=>{
   if(e.target === e.currentTarget){
     setShowSignin(false)
+    setSearch()
   }
   
 }
+useEffect(()=>{
+  if(search.get("sign-in")){
+    setShowSignin(true)
+  }
+
+},[search])
+
+
+
 
   return (
     <div className="flex justify-between items-center container">
@@ -25,6 +42,11 @@ const handleOverlayClick=(e)=>{
     <div>
   
    
+    </div>
+    <div>
+      <Link to="/onboard">
+      <Button variant="primary">Dashboard</Button>
+      </Link>
     </div>
 
         <div><ThemeToggle/></div>

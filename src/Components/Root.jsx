@@ -8,8 +8,10 @@ export default function Root() {
   <main>
     <Header/>
     <Outlet/>
+
   </main>
-    <Footer/>
+  <Footer/>
+    
 </>
   )
 }

@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { ThemeProvider } from "@/components/theme-provider";
 import './App.css';
+import AuthenticatedRoute from './Components/AuthenticatedRoute';
 import Root from './Components/Root';
 import About from './Pages/About';
 import AllJobs from './Pages/AllJobs';
@@ -26,27 +27,39 @@ const router= createBrowserRouter([
     },
       {
       path:"/alljobs",
-      element:<AllJobs/>
+      element:(<AuthenticatedRoute>
+        <AllJobs/>
+      </AuthenticatedRoute>)
     },
       {
       path:"/aplicants",
-      element:<Applicants/>
+      element:<AuthenticatedRoute>
+      <Applicants/>
+    </AuthenticatedRoute>
     },
       {
       path:"/jobdetails/:id",
-      element:<JobDetails/>
+      element:<AuthenticatedRoute>
+      <JobDetails/>
+    </AuthenticatedRoute>
     },
       {
       path:"/myjobs",
-      element:<MyJobs/>
+      element:<AuthenticatedRoute>
+      <MyJobs/>
+    </AuthenticatedRoute>
     },
       {
       path:"/onboard",
-      element:<Onboard/>
+      element:<AuthenticatedRoute>
+      <Onboard/>
+    </AuthenticatedRoute>
     },
       {
       path:"/postjob",
-      element:<Postjob/>
+      element:<AuthenticatedRoute>
+      <Postjob/>
+    </AuthenticatedRoute>
     }
 
     ]
