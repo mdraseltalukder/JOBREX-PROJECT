@@ -23,12 +23,11 @@ export default function Onboard() {
   }
 
   // if role pawa jai tahole ar onboard page e jawa jabe na
-
   useEffect(() => {
     if (user?.unsafeMetadata?.role) {
       navigateUser(user?.unsafeMetadata?.role);
     }
-  }, [user, navigateUser]);
+  }, []);
 
   return (
     <div className="flex flex-col gap-12 items-center justify-center h-[60vh]">

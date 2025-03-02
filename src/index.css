@@ -2,11 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-  
-
-  
-
-  :root  {
+  :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
@@ -33,7 +29,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
   }
-  .dark  {
+  .dark {
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
@@ -54,39 +50,20 @@
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
     --radius: 0.5rem;
-  
-  
-
 
     .ring-offset-background {
-
       color: black;
     }
-  
-  
-
 
     --chart-1: 220 70% 50%;
-  
-  
-
 
     --chart-2: 160 60% 45%;
-  
-  
-
 
     --chart-3: 30 80% 55%;
-  
-  
-
 
     --chart-4: 280 65% 60%;
-  
-  
 
-
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
 @layer base {
@@ -96,6 +73,17 @@
   body {
     @apply bg-background text-foreground;
   }
-
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+button.flex.h-9.w-full.items-center.justify-between.whitespace-nowrap.rounded-md.border.border-input.bg-transparent.px-3.py-2.text-sm.shadow-sm.ring-offset-background.placeholder\:text-muted-foreground.focus\:outline-none.focus\:ring-1.focus\:ring-ring.disabled\:cursor-not-allowed.disabled\:opacity-50.\[\&\>span\]\:line-clamp-1 {
+  @apply dark:text-white;
+}
